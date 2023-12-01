@@ -1,0 +1,45 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espectro Musical</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-gray-900 p-8">
+    <div class="container mx-auto mt-8 bg-gray-800 p-8 rounded-lg shadow-md">
+      <h1 class="text-2xl font-bold mb-4">Espectro Musical</h1>
+      <input
+        type="file"
+        id="audioFile"
+        accept=".mp3, .wav"
+        class="mb-4 rounded-2xl p-2 text-white"
+      />
+      <div class="relative">
+        <canvas
+          id="spectroCanvas"
+          class="w-full h-80 border rounded-3xl"
+        ></canvas>
+        <div
+          class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center"
+        >
+          <p id="elapsedTime" class="text-white">Tempo decorrido: 0:00</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-between mt-4">
+        <button
+          id="playPauseBtn"
+          class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          Play
+        </button>
+        <input id="progressBar" type="range" step="0.01" class="flex-1 mx-4" />
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
